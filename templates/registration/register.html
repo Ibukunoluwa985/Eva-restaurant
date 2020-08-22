@@ -1,0 +1,59 @@
+<!-- BASE EXTENTION -->
+{% extends 'layouts/base.html' %}
+
+<!-- LOADING STATIC FILES -->
+{% load static %}
+
+<!-- BLOCK CONTENT -->
+{% block content %}
+
+    <!-- SPACE -->
+    <div class="space-md d-md-none"></div>
+    
+    <!-- REGITRATION FORM -->
+    <section id="contact" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-sm-12 text-center">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <h2>Eva Registration</h2>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 text-center">
+                    <form action="register" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+                        {% csrf_token %}
+                        <div class="col-md-12 col-sm-12">
+                            <input type="text" class="form-control text-center" id="cf-name" name="first_name"  placeholder="First Name" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="text" class="form-control text-center" id="cf-name" name="last_name" placeholder="Last Name" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="text" class="form-control text-center" id="cf-name" name="username" placeholder="Username" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="email" class="form-control text-center" id="cf-email" name="email" placeholder="Email" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control text-center" id="cf-password" name="password" placeholder="Password" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control text-center" id="cf-confirm-password" name="password_cfrm" placeholder="confirm password" required/>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <button type="submit" class="form-control text-center" id="cf-submit" name="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

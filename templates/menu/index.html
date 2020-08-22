@@ -1,0 +1,48 @@
+<!-- BASE EXTENTION -->
+{% extends 'layouts/base.html' %}
+
+<!-- LOADING STATIC FILES -->
+{% load static %}
+
+<!-- BLOCK CONTENT -->
+{% block content %}
+
+    <!-- SPACE -->
+    <div class="space-md d-md-none"></div>
+    
+    <!-- MENU-->
+    <section id="menu" data-stellar-background-ratio="0.5">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                            <h1>Our Menus</h1>
+                            <h4>Check Out &amp; Plates</h4>
+                    </div>
+                </div>
+
+                {% for m in menu %}
+                    <div class="col-md-4 col-sm-6">
+                        <!-- MENU THUMB -->
+                        <div class="menu-thumb">
+                            <img src="{{ m.plate_img.url }}" width="600" height="350" class="img-responsive" alt="{{ m.plate }}">
+                            <div class="menu-info text-capitalize">
+                                <div class="menu-item">
+                                    <a href="/menu/item/{{ m.id }}">
+                                        <h3 class="text-primary">{{ m.plate }}</h3>
+                                    </a>
+                                    <p>{{ m.recipies }}</p>
+                                </div>
+                                <div class="menu-price">
+                                    <span>₦{{ m.cost }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

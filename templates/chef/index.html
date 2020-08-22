@@ -1,0 +1,59 @@
+<!-- BASE EXTENTION -->
+{% extends 'layouts/base.html' %}
+
+<!-- LOADING STATIC FILES -->
+{% load static %}
+
+<!-- BLOCK CONTENT -->
+{% block content %}
+
+    <!-- SPACE -->
+    <div class="space-md d-md-none"></div>
+
+    <!-- TEAM -->
+    <section id="team" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                            <h1>Kitchen Officials</h1>
+                            <h4>Serving you the best</h4>
+                    </div>
+                </div>
+
+                {% for cf in chef %}
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                            <img src="{{ cf.chef_img.url }}" width="600" height="550" class="img-responsive" alt="">
+                            <div class="team-hover">
+                                <div class="team-item">
+                                    <h4 class="text-capitalize">
+                                        {{ cf.name }}
+                                        <br/>Eva's<br/>
+                                        {{ cf.role }}
+                                    </h4> 
+                                    <ul class="social-icon">
+                                        {% if cf.instagram != 'True' %}
+                                            <li><a href="{{ cf.instagram }}" class="fa fa-instagram"></a></li>
+                                        {% elif cf.facebook != 'True' %}
+                                            <li><a href="{{ cf.facebook }}" class="fa fa-facebook"></a></li>
+                                        {% elif cf.instagram != 'True' and cf.facebook != 'True' %}
+                                            <li><a href="{{ cf.instagram }}" class="fa fa-instagram"></a></li>
+                                            <li><a href="{{ cf.facebook }}" class="fa fa-facebook"></a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>{{ cf.name }}</h3>
+                            <p>{{ cf.role }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

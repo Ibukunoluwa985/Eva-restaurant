@@ -1,0 +1,38 @@
+<!-- messages -->
+{% if messages %}
+    {% for message in messages %}
+        <!-- Side Modal Top Left -->
+        <div id="hideDiv" class="modal-content modal-sm navbar-expand-md fixed-top alert alert-{{ message.tags }} alert-dismissible fade show zero-radius" role="alert">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center text-capitalize font-weight-bold" id="myModalLabel">
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <strong style="color: #ff4444d3;">
+                            Error!
+                        </strong>
+                    {% else %}
+                        <strong style="color: #45ff34d7;">
+                            {{ message.tags|title }}!
+                        </strong>
+                    {% endif %}
+                </h4>
+            </div>
+            <div class="modal-body text-center text-capitalize">
+                <h6>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <strong style="color: #ff4444d3;">
+                            {{ message }}
+                        </strong>
+                    {% else %}
+                        <strong style="color: #45ff34d7;">
+                            {{ message }}
+                        </strong>
+                    {% endif %}
+                </h6>
+            </div>
+            <button type="button" class="close btn btn-md text-danger" data-dismiss="alert" aria-label="Close">
+                <span class="h1" aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- Side Modal Top Left -->
+    {% endfor %}
+{% endif %}

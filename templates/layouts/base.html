@@ -1,0 +1,258 @@
+<!-- LOADING STATIC FILES -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="{% static 'images/logo.png' %}"  type="image/x-icon">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="{% static 'css/major-style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+        <!-- Title -->
+        <title>Eva||Official</title>
+
+    </head>
+    <body>
+
+        <!-- PRE LOADER -->
+        <div class="container">
+            <div class="row">
+                <section class="preloader">
+                    <div class="col-sm-12">
+                        <div class="spinner">
+
+                            <span class="spinner-rotate"></span>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>       
+
+        <!-- MENU -->
+        {% if request.path == '/' %}
+            <nav style="border-radius:0 !important;" class="navbar navbar-expand-md navbar-dark fixed-top nav-transparent" id="custom_navbar2">
+        {% else %}
+            <nav style="border-radius:0 !important;" class="navbar navbar-expand-md navbar-dark fixed-top nav-colored">
+        {% endif %}
+
+            <!-- brand name/logo -->
+            <a class="navbar-brand ml-5 mr-5" href="/">
+                <img src="{% static 'images/logo.png' %}" width="65" height="65" class="img-fluid" alt="Eva">
+            </a>
+        
+            <!-- navbar small screen trigger button -->
+            <button class="btn btn-sm navbar-toggler btn-outline-none" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navTrigger justify-content-center">
+                    <i></i>
+                    <i class="move-left"></i>
+                    <i></i>
+                </span>
+            </button>
+        
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ml-5 mr-5">
+                        <h4>
+                            <a class="nav-link text-center text-white" href="/">Home</a>
+                        </h4>
+                    </li>
+                    <li class="nav-item ml-4 mr-4">
+                        <h4>
+                            <a class="nav-link text-center text-white" href="/menu/quickmenu">Quick Menu</a>
+                        </h4>
+                    </li>
+                    <li class="nav-item ml-4 mr-4">
+                        <h4>
+                            <a class="nav-link text-center text-white" href="/reservation">Reservation</a>
+                        </h4>
+                    </li>
+                    <li class="nav-item ml-4 mr-4">
+                        <h4>
+                            <a class="nav-link text-center text-white" href="/chef">Chef</a>
+                        </h4>
+                    </li>
+                    <li class="nav-item ml-4 mr-4">
+                        <h4>
+                            <a class="nav-link text-center text-white" href="/menu">Menu</a>
+                        </h4>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/account/logout">Logout</a>
+                            </h4>
+                        </li>
+                    {% else %}
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/account/login">Login</a>
+                            </h4>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item ml-5 mr-5">
+                        <h4>
+                            <a class="nav-link text-center text-danger" href="tel:+2349018398960">
+                                <i class="fa fa-lg fa-phone"></i> +234 901 8398 960
+                            </a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+        
+        </nav>
+
+        <!-- MESSAGES -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 nav-transparent">
+                    {% include 'messages/alert.html' %}
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK CONTENT -->
+        {% block content %}
+
+        {% endblock %}       
+
+        <!-- SCROLL UP -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="scrollup text-center">
+                        <a href="#">
+                            <i class="fa fa-lg fa-arrow-up text-white"></i>
+                            <br>
+                            <p class="text-white">
+                                up
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer id="footer" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row">
+
+                        <div class="col-md-3 col-sm-8">
+                            <div class="footer-info">
+                                <div class="section-title">
+                                    <h2 class="wow fadeInUp" data-wow-delay="0.2s">Find us</h2>
+                                </div>
+                                <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                    <p>
+                                        No: 33 nave street
+                                        <br>
+                                        Ajayi
+                                        <br>
+                                        Aduja, Nigeria
+                                    </p>
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-8">
+                            <div class="footer-info">
+                                <div class="section-title">
+                                    <h2 class="wow fadeInUp" data-wow-delay="0.2s">Reservation</h2>
+                                </div>
+                                {% if user.is_authenticated %}
+                                    <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                        <p>+234 901 8398 960</p>
+                                        <p><a href="gmail:promisenap2001@gmail.com">promisenap2001@gmail.com</a></p>
+                                        <p>LINE: 1111 P.O.Box </p>
+                                    </address>
+                                {% else %}
+                                    <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                        <p>Please login to add reservation</p>
+                                    </address>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-8">
+                            <div class="footer-info footer-open-hour">
+                                <div class="section-title">
+                                    <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
+                                </div>
+                                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                    <div>
+                                            <strong>Monday to Friday</strong>
+                                            <p>7:00 AM - 9:00 PM</p>
+                                    </div>
+                                    <div>
+                                            <strong>Saturday - Sunday</strong>
+                                            <p>11:00 AM - 10:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4">
+                            <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s">
+                                <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-instagram"></a></li>
+                                <li><a href="#" class="fa fa-google"></a></li>
+                            </ul>
+
+                            <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s"> 
+                                <p>
+                                    <br>
+                                    Copyright &copy; 2020
+                                    <br>
+                                    Eva 
+                                    <br>
+                                    Design &amp; Manage:
+                                    <br>
+                                    El-nino tech
+                                </p>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- SCRIPTS -->
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/smoothscroll.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    </body>
+</html>
