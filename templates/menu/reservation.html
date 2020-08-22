@@ -1,0 +1,97 @@
+<!-- BASE EXTENTION -->
+{% extends 'layouts/base.html' %}
+
+<!-- LOADING STATIC FILES -->
+{% load static %}
+
+<!-- LOADING HUMANIZE -->
+{% load humanize %}
+
+<!-- BLOCK CONTENT -->
+{% block content %}
+    <!-- HOME -->
+    <section id="home" class="slider" data-stellar-background-ratio="0.5">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <div class="owl-carousel owl-theme">
+                    <div class="item item-reservation-first">
+                        <div class="caption">
+                            <div class="container">
+                                <div class="col-md-8 col-sm-12">
+                                    <h3>Eva Restaurant</h3>
+                                    <h1>Our mission is to provide an unforgettable experience</h1>
+                                    <a href="/chef" class="section-btn btn btn-default smoothScroll">They Chefs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="item item-reservation-second">
+                        <div class="caption">
+                            <div class="container">
+                                <div class="col-md-8 col-sm-12">
+                                    <h3>Perfect Fast Food</h3>
+                                    <h1>The best fast food quality can be here too!</h1>
+                                    <a href="/menu" class="section-btn btn btn-default smoothScroll">Discover Menu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="item item-reservation-third">
+                        <div class="caption">
+                            <div class="container">
+                                <div class="col-md-8 col-sm-12">
+                                    <h3>New Restaurant in Yola</h3>
+                                    <h1>Enjoy our special menus every Sunday and Friday</h1>
+                                    <a href="/menu/reservation" class="section-btn btn btn-default smoothScroll">Reservation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVATION FORM -->
+    <section id="contact" data-stellar-background-ratio="0.5" style="background-image: url({% static 'images/testimonial-bg.jpg' %});">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-sm-12 text-center">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <h2>Eva Reservation</h2>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 text-center">
+                    <form action="reservation" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+                        {% csrf_token %}
+                        <div class="col-md-12 col-sm-12">
+                            <input type="text" class="form-control text-center" id="cf-name" name="full_name"  placeholder="Full Name" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="number" class="form-control text-center" id="cf-name" name="number_of_person" placeholder="Number of person" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="text" class="form-control text-center" id="cf-name" name="phone_number" placeholder="Contact phone number" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <input type="email" class="form-control text-center" id="cf-email" name="email" placeholder="Email" required />
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <button type="submit" class="form-control text-center" id="cf-submit" name="submit">Place a reservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

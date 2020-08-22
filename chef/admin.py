@@ -6,8 +6,8 @@ from .models import Chef
 # chef registering, filter
 @admin.register(Chef)
 class ChefAdmin(admin.ModelAdmin):
-    list_display = ("name", "role", "joined_on",)
+    list_display = ("id", "name", "role", "joined_on",)
     # chef filter
     list_filter = ("joined_on", "name", "role",)
     # chef search
-    search_fields = ("name__startswith", "role__startswith", "joined_on__startswith", )
+    search_fields = ("id__startswith", "name__startswith", "role__startswith", "joined_on__startswith", )

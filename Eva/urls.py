@@ -24,6 +24,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('chef/', include('chef.urls')),
     path('menu/', include('menu.urls')),
+    path('staff/', include('staff.urls')),
 ]
 
 # joining media path to url patterns

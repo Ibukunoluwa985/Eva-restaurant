@@ -434,6 +434,102 @@ http://www.templatemo.com/tm-515-eatery
     color: #ffffff;
   }
 
+  .slider .item-menu-first {
+    background-image: url(../images/slider-menu-image1.jpg);
+  }
+
+  .slider .item-menu-second {
+    background-image: url(../images/slider-menu-image2.jpg);
+  }
+
+  .slider .item-menu-third {
+    background-image: url(../images/slider-menu-image3.jpg);
+  }
+
+  .slider .item-menu-second .section-btn {
+    background: #292929;
+  }
+
+  .slider .item-menu-second .section-btn:hover {
+    background: #ffffff;
+  }
+
+  .slider .item-menu-third .section-btn {
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  .slider .item-menu-third .section-btn:hover,
+  .slider .item-menu-third .section-btn:focus {
+    background: #ce3232;
+    border-color: transparent;
+    color: #ffffff;
+  }
+
+  .slider .item-quickmenu-first {
+    background-image: url(../images/slider-quickmenu-image1.jpg);
+  }
+
+  .slider .item-quickmenu-second {
+    background-image: url(../images/slider-quickmenu-image2.jpg);
+  }
+
+  .slider .item-quickmenu-third {
+    background-image: url(../images/slider-quickmenu-image3.jpg);
+  }
+
+  .slider .item-quickmenu-second .section-btn {
+    background: #292929;
+  }
+
+  .slider .item-quickmenu-second .section-btn:hover {
+    background: #ffffff;
+  }
+
+  .slider .item-quickmenu-third .section-btn {
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  .slider .item-quickmenu-third .section-btn:hover,
+  .slider .item-quickmenu-third .section-btn:focus {
+    background: #ce3232;
+    border-color: transparent;
+    color: #ffffff;
+  }
+
+  .slider .item-reservation-first {
+    background-image: url(../images/slider-reservation-image1.jpg);
+  }
+
+  .slider .item-reservation-second {
+    background-image: url(../images/slider-reservation-image2.jpg);
+  }
+
+  .slider .item-reservation-third {
+    background-image: url(../images/slider-reservation-image3.jpg);
+  }
+
+  .slider .item-reservation-second .section-btn {
+    background: #292929;
+  }
+
+  .slider .item-reservation-second .section-btn:hover {
+    background: #ffffff;
+  }
+
+  .slider .item-reservation-third .section-btn {
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  .slider .item-reservation-third .section-btn:hover,
+  .slider .item-reservation-third .section-btn:focus {
+    background: #ce3232;
+    border-color: transparent;
+    color: #ffffff;
+  }
+
   /*---------------------------------------
       ABOUT              
   -----------------------------------------*/

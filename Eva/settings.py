@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'chef.apps.ChefConfig',
     'home.apps.HomeConfig',
     'menu.apps.MenuConfig',
+    'staff.apps.StaffConfig',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,15 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Eva',
+#         'HOST': '127.0.0.1',
+#         'USER': 'Ibukunoluwa',
+#         'PASSWORD': 'Promise/mecky1',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

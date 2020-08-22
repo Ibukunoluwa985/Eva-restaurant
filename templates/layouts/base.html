@@ -49,7 +49,7 @@
         </div>       
 
         <!-- MENU -->
-        {% if request.path == '/' %}
+        {% if request.path == '/' or request.path == '/menu/' or request.path == '/menu/quickmenu' or request.path == '/menu/reservation' %}
             <nav style="border-radius:0 !important;" class="navbar navbar-expand-md navbar-dark fixed-top nav-transparent" id="custom_navbar2">
         {% else %}
             <nav style="border-radius:0 !important;" class="navbar navbar-expand-md navbar-dark fixed-top nav-colored">
@@ -69,56 +69,91 @@
                 </span>
             </button>
         
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ml-5 mr-5">
-                        <h4>
-                            <a class="nav-link text-center text-white" href="/">Home</a>
-                        </h4>
-                    </li>
-                    <li class="nav-item ml-4 mr-4">
-                        <h4>
-                            <a class="nav-link text-center text-white" href="/menu/quickmenu">Quick Menu</a>
-                        </h4>
-                    </li>
-                    <li class="nav-item ml-4 mr-4">
-                        <h4>
-                            <a class="nav-link text-center text-white" href="/reservation">Reservation</a>
-                        </h4>
-                    </li>
-                    <li class="nav-item ml-4 mr-4">
-                        <h4>
-                            <a class="nav-link text-center text-white" href="/chef">Chef</a>
-                        </h4>
-                    </li>
-                    <li class="nav-item ml-4 mr-4">
-                        <h4>
-                            <a class="nav-link text-center text-white" href="/menu">Menu</a>
-                        </h4>
-                    </li>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item ml-4 mr-4">
+            {% if user.is_staff %}
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ml-5 mr-5">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/staff">Home</a>
+                            </h4>
+                        </li>
+                        <li class="nav-item ml-3 mr-3">
                             <h4>
                                 <a class="nav-link text-center text-white" href="/account/logout">Logout</a>
                             </h4>
                         </li>
-                    {% else %}
-                        <li class="nav-item ml-4 mr-4">
+                        <li class="nav-item ml-3 mr-3">
                             <h4>
-                                <a class="nav-link text-center text-white" href="/account/login">Login</a>
+                                <a class="nav-link text-center text-success" href="/account/">{{ user.username }}</a>
                             </h4>
                         </li>
-                    {% endif %}
-                    <li class="nav-item ml-5 mr-5">
-                        <h4>
-                            <a class="nav-link text-center text-danger" href="tel:+2349018398960">
-                                <i class="fa fa-lg fa-phone"></i> +234 901 8398 960
-                            </a>
-                        </h4>
-                    </li>
-                </ul>
-            </div>
+                    </ul>
+                </div>
+            {% else %}
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ml-5 mr-5">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/">Home</a>
+                            </h4>
+                        </li>
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/menu/quickmenu">Quick Menu</a>
+                            </h4>
+                        </li>
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/menu/reservation">Reservation</a>
+                            </h4>
+                        </li>
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/chef">Chef</a>
+                            </h4>
+                        </li>
+                        <li class="nav-item ml-4 mr-4">
+                            <h4>
+                                <a class="nav-link text-center text-white" href="/menu">Menu</a>
+                            </h4>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item ml-3 mr-3">
+                                <h4>
+                                    <a class="nav-link text-center text-white" href="/account/logout">Logout</a>
+                                </h4>
+                            </li>
+                            <li class="nav-item ml-3 mr-3">
+                                <h4>
+                                    <a class="nav-link text-center text-success" href="/account/">{{ user.username }}</a>
+                                </h4>
+                            </li>
+                            <li class="nav-item ml-5 mr-5">
+                                <h4>
+                                    <a class="nav-link text-center text-danger" href="tel:+2349018398960">
+                                        <i class="fa fa-2x fa-phone"></i>
+                                    </a>
+                                </h4>
+                            </li>
+                        {% else %}
+                            <li class="nav-item ml-4 mr-4">
+                                <h4>
+                                    <a class="nav-link text-center text-white" href="/account/login">Login</a>
+                                </h4>
+                            </li>
+                            <li class="nav-item ml-5 mr-5">
+                                <h4>
+                                    <a class="nav-link text-center text-danger" href="tel:+2349018398960">
+                                        <i class="fa fa-lg fa-phone"></i> +234 901 8398 960
+                                    </a>
+                                </h4>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
         
         </nav>
 
@@ -201,12 +236,12 @@
                                 </div>
                                 <div class="wow fadeInUp" data-wow-delay="0.4s">
                                     <div>
-                                            <strong>Monday to Friday</strong>
-                                            <p>7:00 AM - 9:00 PM</p>
+                                        <strong>Monday to Friday</strong>
+                                        <p>7:00 AM - 9:00 PM</p>
                                     </div>
                                     <div>
-                                            <strong>Saturday - Sunday</strong>
-                                            <p>11:00 AM - 10:00 PM</p>
+                                        <strong>Saturday - Sunday</strong>
+                                        <p>11:00 AM - 10:00 PM</p>
                                     </div>
                                 </div>
                             </div>
