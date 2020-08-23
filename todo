@@ -1,4 +1,3 @@
-1 add validation to the password section of the registration URL.
 2 learn how to sent email in django and use it to built the contact form.
 3 make reset password and forget password.
 4 add call in the admin order section

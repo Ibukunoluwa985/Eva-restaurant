@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'Eva',
         'HOST': '127.0.0.1',
         'USER': 'Ibukunoluwa',
-        'PASSWORD': 'Promise/mecky1'
+        'PASSWORD': 'Promise/mecky1',
     }
 }
 
@@ -151,3 +151,36 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # handling media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# email handlering and settings
+
+# # for testing below, uncomment this section
+# # run this in the terminal to no the testing smtp. $ python3 -m smtpd -n -c DebuggingServer 127.0.0.1:1025
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = '127.0.0.1'
+# EMAIL_POST = '1025'
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = False
+
+
+
+# # for real world below, uncomment this section if commented
+# NOTICE:
+# # 1>>> Please use an enviromental virable for securing your email and password
+# # 2>>> Have to make changes in the gmail. Go to this URL after logging into your gmail.
+# # https://myaccount.google.com/lesssecureapps
+# # toggle NO if OFF
+# # 3>>> and visit this also
+# # https://accounts.google.com/DisplayUnlockCaptcha
+# # click continue
+# # ADDITION SECURETY 
+# # Enable "Two way authentication on your gmail. And then visit this URL"
+# # https://myaccount.google.com/apppasswords
+# # create an app password to use for your app instead of your real gmail password
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'promisenap2001@gmail.com'
+EMAIL_HOST_PASSWORD = 'Promise/mecky1'
+EMAIL_PORT = 587
