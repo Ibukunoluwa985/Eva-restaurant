@@ -27,5 +27,5 @@ urlpatterns = [
     path('staff/', include('staff.urls')),
 ]
 
-# joining media path to url patterns
+# joining static and media path to url patterns
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

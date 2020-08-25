@@ -32,7 +32,7 @@ def contact_us_email(request):
         # get the values from post
         receiver_email = request.POST['email']
         from_email = settings.EMAIL_HOST_USER
-        subject = request.POST['subject']
+        subject = request.POST['email']
         message = request.POST['message']
 
         # sending email

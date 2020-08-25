@@ -25,11 +25,7 @@ SECRET_KEY = 'on95p24k0vs*6$(gnsrxf!-f+o_$wj)n@2%c8i2v!)wba2n^-j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.143', '0.0.0.0', '127.0.0.1']
-
-# livereload host and port custom configuration
-# LIVERELOAD_HOST = ['127.0.0.1']
-# LIVERELOAD_PORT = ['8000']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -69,6 +65,7 @@ ROOT_URLCONF = 'Eva.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # joining the templates DIR
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -85,9 +82,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Eva.wsgi.application'
 
 
-# Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# sqlite3 database settings by default
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -95,13 +92,14 @@ WSGI_APPLICATION = 'Eva.wsgi.application'
 #     }
 # }
 
+# postgres database settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Eva',
-        'HOST': '127.0.0.1',
-        'USER': 'Ibukunoluwa',
-        'PASSWORD': 'Promise/mecky1',
+        'NAME': '******', # replace this with your database name e.g: (eva)
+        'HOST': '******', # replace this with your database host e.g: (127.0.0.1)
+        'USER': '******', # replace this with your database user e.g: (Jonh)
+        'PASSWORD': '******', # replace this with your database password e.g: (123Jonh)
     }
 }
 
@@ -155,7 +153,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # email handlering and settings
 
 # # for testing below, uncomment this section
-# # run this in the terminal to no the testing smtp. $ python3 -m smtpd -n -c DebuggingServer 127.0.0.1:1025
+# # run this in the terminal to no the testing smtp.>>> $ python3 -m smtpd -n -c DebuggingServer 127.0.0.1:1025
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST = '127.0.0.1'
 # EMAIL_POST = '1025'
@@ -181,6 +179,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # # create an app password to use for your app instead of your real gmail password
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'promisenap2001@gmail.com'
-EMAIL_HOST_PASSWORD = 'Promise/mecky1'
+EMAIL_HOST_USER = '******' # replace this with your gmail account EMAIL e.g: (123@gmail.com)
+EMAIL_HOST_PASSWORD = '*******' # replace this with your gmail account PASSWORD e.g: (123abc)
 EMAIL_PORT = 587
+
+# NOTICE
+# This credentials are only for gmail, other smtp companies have their own. So if using different smtp server.
+# please google on how the set their's for django.
